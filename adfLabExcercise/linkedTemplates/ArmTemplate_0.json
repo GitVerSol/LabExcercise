@@ -224,7 +224,7 @@
 						"     limit: 100,",
 						"     ignoreNoFilesFound: false,",
 						"     modifiedAfter: (toTimestamp(1667347200000L)),",
-						"     skipLines: 2) ~> SrcCmpgnAnlytcs",
+						"     skipLines: 1) ~> SrcCmpgnAnlytcs",
 						"SrcCmpgnAnlytcs select(mapColumn(",
 						"          Region = {_col0_},",
 						"          Country = {_col1_},",
