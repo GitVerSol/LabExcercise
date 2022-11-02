@@ -26,13 +26,13 @@
 			],
 			"transformations": [
 				{
-					"name": "select1"
+					"name": "SelRenameCol"
 				},
 				{
-					"name": "derivedColumn1"
+					"name": "DerivedRevCalc"
 				},
 				{
-					"name": "select2"
+					"name": "SelRemoveCol"
 				}
 			],
 			"scriptLines": [
@@ -67,10 +67,10 @@
 				"          State = {_col9_}",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 derive(Revenue = toDecimal(replace(concat(toString(RevenuePart1), toString(Revenue)), '\\\\', ''), 10, 2, '$###,###.##'),",
-				"          RevenueTarget = toDecimal(replace(concat(toString(RevenueTargetPart1), toString(RevenueTarget)), '\\\\', ''), 10, 2, '$###,###.##')) ~> derivedColumn1",
-				"derivedColumn1 select(mapColumn(",
+				"     skipDuplicateMapOutputs: true) ~> SelRenameCol",
+				"SelRenameCol derive(Revenue = toDecimal(replace(concat(toString(RevenuePart1), toString(Revenue)), '\\\\', ''), 10, 2, '$###,###.##'),",
+				"          RevenueTarget = toDecimal(replace(concat(toString(RevenueTargetPart1), toString(RevenueTarget)), '\\\\', ''), 10, 2, '$###,###.##')) ~> DerivedRevCalc",
+				"DerivedRevCalc select(mapColumn(",
 				"          Region,",
 				"          Country,",
 				"          ProductCategory,",
@@ -81,8 +81,8 @@
 				"          State",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select2",
-				"select2 sink(allowSchemaDrift: true,",
+				"     skipDuplicateMapOutputs: true) ~> SelRemoveCol",
+				"SelRemoveCol sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          Region as string,",
