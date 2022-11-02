@@ -15,11 +15,7 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [
-				{
-					"name": "select1"
-				}
-			],
+			"transformations": [],
 			"scriptLines": [
 				"source(output(",
 				"          Column_1 as string,",
@@ -37,19 +33,7 @@
 				"     limit: 100,",
 				"     ignoreNoFilesFound: false,",
 				"     modifiedAfter: (toTimestamp(1667347200104L)),",
-				"     skipLines: 1) ~> SrcCmpgnAnlytcs",
-				"SrcCmpgnAnlytcs select(mapColumn(",
-				"          Region = Column_1,",
-				"          Country = Column_2,",
-				"          ProductCategory = Column_3,",
-				"          CampaignName = Column_4,",
-				"          RevenuePart1 = Column_5,",
-				"          Column_6,",
-				"          Column_7,",
-				"          Column_8",
-				"     ),",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1"
+				"     skipLines: 1) ~> SrcCmpgnAnlytcs"
 			]
 		}
 	}
