@@ -1,0 +1,9 @@
+{
+	"name": "adfLabExcercise",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bf73789a-c1fd-4849-a2ce-df1a400e0ab2",
+		"tenantId": "e0c0727b-e78f-4b8c-90e1-e05ab92d58e5"
+	}
+}
