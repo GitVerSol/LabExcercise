@@ -50,7 +50,6 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: true,",
-				"     limit: 100,",
 				"     ignoreNoFilesFound: false,",
 				"     modifiedAfter: (toTimestamp(1667347200000L)),",
 				"     skipLines: 1) ~> SrcCmpgnAnlytcs",
